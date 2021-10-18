@@ -12,10 +12,10 @@ const App = () => {
 		<div className="bg-gray-100">
 			<Contact open={openForm} setOpen={setOpenForm} />
 			<NavBar setOpenForm={setOpenForm} />
-			<div className="max-w-7xl mx-auto">
+			<main className="max-w-7xl mx-auto">
 				<About />
 				<ProjectOverview />
-			</div>
+			</main>
 			<Footer />
 		</div>
 	)

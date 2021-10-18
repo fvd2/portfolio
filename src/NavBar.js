@@ -24,7 +24,7 @@ const NavBar = ({ setOpenForm }) => {
 						<button
 							type="button"
 							onClick={() => setOpenForm(true)}
-							className="py-1 px-3 rounded-3xl transition duration-150 shadow-2xl  drop-shadow-2xl bg-purple-700 hover:bg-purple-600 active:bg-purple-900 text-white font-semibold">
+							className="mr-2 py-1 px-3 rounded-3xl transition duration-150 shadow-2xl  drop-shadow-2xl bg-purple-700 hover:bg-purple-600 active:bg-purple-900 text-white font-semibold">
 							Contact me
 						</button>
 					</div>

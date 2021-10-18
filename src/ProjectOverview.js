@@ -130,47 +130,42 @@ const ProjectOverview = () => {
 
 	return (
 		<section>
-			<div className="max-w-7xl sm:py-6 p-4 sm:p-6 lg:p-8 ">
-				<h2 className="text-3xl md:text-4xl lg:text-5xl text-gradient bg-gradient-to-br from-gray-800 to-purple-900 font-bold pt-20 pb-10">
-					Recent work
-				</h2>
-				<div className="flex justify-items-start items-center gap-8 flex-wrap ">
-					<ProjectOverview />
-					<div>
-						<div className="block pb-10">
-							<nav
-								className="-mb-px flex justify-center lg:justify-start space-x-8"
-								aria-label="Tabs">
-								{tabs.map((tab, index) => (
-									<button
-										key={tab.name}
-										onClick={() => handleTabChange(index)}
+			<div className="mx-auto border-t-2 border-gray-300 mt-10 w-1/12"/>
+			<div className="max-w-7xl mb-10 py-16 mx-auto px-4 sm:px-6 lg:px-8">
+				<div>
+					<div className="block pb-10">
+						<nav
+							className="-mb-px flex justify-center space-x-8"
+							aria-label="Tabs">
+							{tabs.map((tab, index) => (
+								<button
+									key={tab.name}
+									onClick={() => handleTabChange(index)}
+									className={classNames(
+										tab.current
+											? 'border-indigo-800 text-indigo-900'
+											: 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+										'group inline-flex items-center py-4 px-1 border-b-2 font-medium text-xl'
+									)}
+									aria-current={
+										tab.current ? 'page' : undefined
+									}>
+									<tab.icon
 										className={classNames(
 											tab.current
-												? 'border-indigo-800 text-indigo-900'
-												: 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
-											'group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm'
+												? 'text-indigo-800'
+												: 'text-gray-400 group-hover:text-gray-500',
+											'-ml-0.5 mr-2 h-5 w-5'
 										)}
-										aria-current={
-											tab.current ? 'page' : undefined
-										}>
-										<tab.icon
-											className={classNames(
-												tab.current
-													? 'text-indigo-800'
-													: 'text-gray-400 group-hover:text-gray-500',
-												'-ml-0.5 mr-2 h-5 w-5'
-											)}
-											aria-hidden="true"
-										/>
-										<span>{tab.name}</span>
-									</button>
-								))}
-							</nav>
-						</div>
-						<div className="flex justify-center lg:justify-start items-center gap-8 flex-wrap">
-							{tabs[0].current ? projects : templates}
-						</div>
+										aria-hidden="true"
+									/>
+									<span>{tab.name}</span>
+								</button>
+							))}
+						</nav>
+					</div>
+					<div className="w-full flex justify-center gap-8 flex-wrap">
+						{tabs[0].current ? projects : templates}
 					</div>
 				</div>
 			</div>

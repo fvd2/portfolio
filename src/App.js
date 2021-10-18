@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Contact from './Contact'
+import Footer from './Footer'
+import NavBar from './NavBar'
+import About from './About'
+import ProjectOverview from './ProjectOverview'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	const [openForm, setOpenForm] = useState(false)
+
+	return (
+		<div className="bg-gray-100">
+			<Contact open={openForm} setOpen={setOpenForm} />
+			<NavBar setOpenForm={setOpenForm} />
+			<div className="max-w-7xl mx-auto">
+				<About />
+				<ProjectOverview />
+			</div>
+			<Footer />
+		</div>
+	)
 }
 
-export default App;
+export default App

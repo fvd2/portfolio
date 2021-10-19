@@ -22,7 +22,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }} 
             - run: yarn install --frozen-lockfile
-            - run: craco build
+            - run: yarn craco build
               env:
                 REACT_APP_EMAIL_JS_USER_ID: ${{ secrets.REACT_APP_EMAIL_JS_USER_ID }}
                 REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }}

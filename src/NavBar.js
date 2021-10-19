@@ -1,36 +1,61 @@
 import PlayIcon from './PlayIcon'
+import bgImage from './assets/luca-calderone-1T97FaKvno8-unsplash-cut.png'
 
-const NavBar = ({ setOpenForm }) => {
+const NavBar = ({ socials }) => {
 	return (
-		<div className="h-40 w-screen bg-gradient-to-r from-blue-900 via-indigo-800 to-purple-900">
-			<nav
-				aria-label="Top"
-				className="relative max-w-7xl mx-auto h-16 border-transparent text-white py-4 px-4 sm:px-6 lg:px-8">
-				<div className="flex justify-between">
-					<div className="inline-flex items-center">
-						<PlayIcon size={8} isWhite={true} />
+		<>
+			<div className="">
+				<img
+					className="absolute max-w-7xl left-1/2 transform -translate-x-1/2 h-auto object-fit"
+					src={bgImage}
+					alt="snow-covered mountain peak"></img>
+			</div>
+			<div className="h-40 w-screen">
+				<nav
+					aria-label="Top"
+					className="relative max-w-7xl mx-auto h-16 border-transparent text-white py-4 px-4 sm:px-6 lg:px-8">
+					<div className="flex justify-between">
+						<div className="inline-flex items-center">
+							<PlayIcon
+								id="navbar"
+								styling={{ className: `h-8` }}
+								isWhite={true}
+							/>
 
-						{/* logo */}
-						<div className="flex ml-2 text-xl">
-							<span className={'font-bold text-white'}>
-								freek
-							</span>
-							<span>vandam.nl</span>
+							{/* logo */}
+							<div className="flex ml-2 text-xl">
+								<span className={'font-bold text-white'}>
+									freek
+								</span>
+								<span>vandam.nl</span>
+							</div>
+						</div>
+
+						{/* nav buttons */}
+						<div className="flex md:gap-4 md:items-center">
+							<div className="flex justify-center items-center space-x-6 md:order-2">
+								{socials.map(item => (
+									<a
+										key={item.name}
+										href={item.href}
+										target="_blank"
+										rel="noreferrer"
+										className="text-white hover:text-gray-400">
+										<span className="sr-only">
+											{item.name}
+										</span>
+										<item.icon
+											className="h-6 w-6"
+											aria-hidden="true"
+										/>
+									</a>
+								))}
+							</div>
 						</div>
 					</div>
-
-					{/* nav buttons */}
-					<div className="flex md:gap-4 md:items-center">
-						<button
-							type="button"
-							onClick={() => setOpenForm(true)}
-							className="mr-2 py-1 px-3 rounded-3xl transition duration-150 shadow-2xl  drop-shadow-2xl bg-purple-700 hover:bg-purple-600 active:bg-purple-900 text-white font-semibold">
-							Contact me
-						</button>
-					</div>
-				</div>
-			</nav>
-		</div>
+				</nav>
+			</div>
+		</>
 	)
 }
 

@@ -1,23 +1,23 @@
 import { useState } from 'react'
 import pronounceFreek from './assets/freek.mp3'
 
-const PlayIcon = ({ size, isWhite }) => {
+const PlayIcon = ({ id, styling, isWhite }) => {
 	const [audio] = useState(new Audio(pronounceFreek))
 	const toggleAudio = () => {
 		audio.play()
 	}
 
 	return (
-		<button className="inline-flex align-middle" onClick={toggleAudio}>
+		<button onClick={toggleAudio}>
 			<span className="sr-only">Pronounce name</span>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				className={`h-${size} w-${size}`}
+				{...styling}
 				viewBox="0 0 20 20"
-				fill="url(#grad1)">
+				fill={`url(#${id})`}>
 				<defs>
 					<linearGradient
-						id="grad1"
+						id={id}
 						x1="0%"
 						y1="0%"
 						x2="0%"

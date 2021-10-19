@@ -13,6 +13,7 @@ module.exports = {
 	variants: {
 		extend: {
 			rotate: ['group-hover'],
+			scale: ['group-hover'],
 			backgroundColor: ['active'],
 			borderColor: ['hover']
 		}

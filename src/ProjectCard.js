@@ -5,10 +5,10 @@ const ProjectCard = ({ project, gradient }) => {
 
 	return (
 		<div className="group grid grid-cols-3 grid-rows-3 max-w-sm">
-			<div className="grid col-start-1 col-span-full row-start-1 row-span-full z-0 bg-gray-200 h-full w-full transform transition-transform rotate-0 group-hover:-rotate-6 rounded-2xl"/>
+			<div className="grid col-start-1 col-span-full row-start-1 row-span-full z-0 bg-gray-200 h-full w-full transform transition-transform rotate-0 group-hover:-rotate-6 group-hover:scale-105 rounded-2xl"/>
 			<div
-				className={`grid col-start-1 col-span-full row-start-1 row-span-full z-10 ${gradient} h-full w-full transform transition-transform rotate-0 group-hover:-rotate-3 rounded-2xl`}/>
-			<div className="col-start-1 col-span-full row-start-1 row-span-full z-40 flex-col self-stretch border-2 bg-gray-50 shadow-2xl rounded-xl">
+				className={`grid col-start-1 col-span-full row-start-1 row-span-full z-10 ${gradient} h-full w-full transform transition-transform rotate-0 group-hover:-rotate-3 group-hover:scale-105 rounded-2xl`}/>
+			<div className="col-start-1 col-span-full row-start-1 row-span-full z-40 flex-col self-stretch border-2 bg-gray-50 shadow-2xl rounded-xl transform transition-transform hover:scale-105">
 				<img
 					src={image.src}
 					alt={image.alt}

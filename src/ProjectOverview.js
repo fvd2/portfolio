@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 import ProjectCard from './ProjectCard'
 import DUMMY_IMG from './assets/gustavo-zambelli-lQKNDz_5kVs-unsplash.jpg'
 import { ClipboardIcon, LightningBoltIcon } from '@heroicons/react/solid'
@@ -112,7 +112,7 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
 }
 
-const ProjectOverview = () => {
+const ProjectOverview = forwardRef((props, ref) => {
 	const [tabs, setTabs] = useState([
 		{ name: 'Projects', icon: LightningBoltIcon, current: true },
 		{ name: 'Templates', icon: ClipboardIcon, current: false }
@@ -129,9 +129,8 @@ const ProjectOverview = () => {
 	}
 
 	return (
-		<section>
-			<div className="mx-auto border-t-2 border-gray-300 mt-10 w-1/12"/>
-			<div className="max-w-7xl mb-10 py-16 mx-auto px-4 sm:px-6 lg:px-8">
+		<section ref={ref}>
+			<div className="pt-96 md:pt-56 lg:pt-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 border-l-2 border-r-2 border-gray-200">
 				<div>
 					<div className="block pb-10">
 						<nav
@@ -171,6 +170,6 @@ const ProjectOverview = () => {
 			</div>
 		</section>
 	)
-}
+})
 
 export default ProjectOverview

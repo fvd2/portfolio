@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
 	purge: [],
@@ -8,6 +9,10 @@ module.exports = {
 			fontFamily: {
 				sans: ['Inter var', ...defaultTheme.fontFamily.sans]
 			},
+			colors: {
+				'warm-gray': colors.warmGray,
+				teal: colors.teal,
+			  },
 		}
 	},
 	variants: {
@@ -18,5 +23,5 @@ module.exports = {
 			borderColor: ['hover']
 		}
 	},
-	plugins: [require('@tailwindcss/forms')]
+	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/forms')]
 }

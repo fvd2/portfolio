@@ -1,6 +1,9 @@
 import { forwardRef, useState } from 'react'
 import ProjectCard from './ProjectCard'
-import DUMMY_IMG from './assets/gustavo-zambelli-lQKNDz_5kVs-unsplash.jpg'
+import kanbanImg from './assets/ss-kanban.png'
+import ecomImg from './assets/ss-ecom.png'
+import authImg from './assets/george-prentzas-SRFG7iwktDk-unsplash.jpg'
+import firebaseImg from './assets/christian-garcia-N7ugU5iFosI-unsplash-cropped.png'
 import { ClipboardIcon, LightningBoltIcon } from '@heroicons/react/solid'
 import update from 'immutability-helper'
 
@@ -13,7 +16,7 @@ const data = [
 			'Basic but fully functioning webstore. Leverages Tailwind UI components for quick prototyping',
 		tags: ['React', 'Tailwind UI', 'Hooks', 'Cookies'],
 		image: {
-			src: DUMMY_IMG,
+			src: ecomImg,
 			label: 'screenshot of live application'
 		},
 		repoUrl: 'https://github.com/fvd2/ecommerce-frontend',
@@ -27,7 +30,7 @@ const data = [
 			'RESTful API with product, cart, order and payment functionality (via Mollie.com integration)',
 		tags: ['Node.js', 'Express', 'MongoDB', 'jwt', 'webhook'],
 		image: {
-			src: DUMMY_IMG,
+			src: ecomImg,
 			label: 'screenshot of live application'
 		},
 		repoUrl: 'https://github.com/fvd2/ecommerce-backend',
@@ -41,7 +44,7 @@ const data = [
 			'Task list and item tracker with a twist: drag and drop. With firebase auth and firestore to persist state',
 		tags: ['react', 'firebase', 'chakra-ui'],
 		image: {
-			src: DUMMY_IMG,
+			src: kanbanImg,
 			label: 'screenshot of live application'
 		},
 		repoUrl: 'https://github.com/fvd2/kanban',
@@ -54,7 +57,7 @@ const data = [
 		description: 'Easily extendable RESTful API with jwt authentication',
 		tags: ['node.js', 'express', 'mongodb', 'jwt'],
 		image: {
-			src: DUMMY_IMG,
+			src: authImg,
 			label: 'tbd'
 		},
 		repoUrl: 'url',
@@ -68,7 +71,7 @@ const data = [
 			'Template for a React app with Firebase Authentication and Firestore setup',
 		tags: ['react', 'firebase'],
 		image: {
-			src: DUMMY_IMG,
+			src: firebaseImg,
 			label: 'screenshot of project code'
 		},
 		repoUrl: 'url',
@@ -130,7 +133,7 @@ const ProjectOverview = forwardRef((props, ref) => {
 
 	return (
 		<section ref={ref}>
-			<div className="pt-96 md:pt-56 lg:pt-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 border-l-2 border-r-2 border-gray-200">
+			<div className="pt-96 pb-16 md:pt-56 lg:pt-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-100 border-l-2 border-r-2 border-gray-200">
 				<div>
 					<div className="block pb-10">
 						<nav

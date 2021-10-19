@@ -4,12 +4,10 @@ import bgImage from './assets/luca-calderone-1T97FaKvno8-unsplash-cut.png'
 const NavBar = ({ socials }) => {
 	return (
 		<>
-			<div className="">
-				<img
-					className="absolute max-w-7xl left-1/2 transform -translate-x-1/2 h-auto object-fit"
-					src={bgImage}
-					alt="snow-covered mountain peak"></img>
-			</div>
+			<img
+				className="absolute max-w-7xl left-1/2 transform -translate-x-1/2 h-auto object-fit"
+				src={bgImage}
+				alt="snow-covered mountain peak"></img>
 			<div className="h-40 w-screen">
 				<nav
 					aria-label="Top"

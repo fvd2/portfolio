@@ -3,11 +3,13 @@ import Contact from './Contact'
 import Footer from './Footer'
 import NavBar from './NavBar'
 import About from './About'
+import Toast from './Toast'
 import ProjectOverview from './ProjectOverview'
 
 const App = () => {
 	// get position of work section to pass to button
 	const [workPosY, setWorkPosY] = useState(0)
+	const [toastIsOpen, setToastIsOpen] = useState(false)
 	const workRef = useRef()
 	useEffect(() => {
 		const detectWorkPosY = () => {
@@ -76,15 +78,14 @@ const App = () => {
 		}
 	]
 
-	const [openForm, setOpenForm] = useState(false)
-
 	return (
 		<>
-			<Contact open={openForm} setOpen={setOpenForm} />
+			<Toast isOpen={toastIsOpen} setIsOpen={setToastIsOpen}/>
 			<NavBar socials={socials} />
 			<main className="max-w-7xl mx-auto">
-				<About setOpenForm={setOpenForm} workPosY={workPosY} />
+				<About workPosY={workPosY} />
 				<ProjectOverview ref={workRef} />
+				<Contact onOpenToast={setToastIsOpen}/>
 			</main>
 			<Footer socials={socials} />
 		</>

@@ -21,8 +21,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - env:
+        REACT_APP_EMAIL_JS_USER_ID: {{ secrets.REACT_APP_EMAIL_JS_USER_ID }} 
+        REACT_APP_TEMPLATE_ID: {{ secrets.REACT_APP_TEMPLATE_ID}}template_6gbtac7
+        REACT_APP_SERVICE_ID: service_2w46i9m
     - run: yarn install --frozen-lockfile
-    - run: yarn build
+    - run: craco build
     - name: archive build files
       uses: actions/upload-artifact@v2
       with:

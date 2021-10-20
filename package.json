@@ -1,6 +1,5 @@
 {
 	"name": "portfolio",
-	"homepage": "https://freekvandam.nl",
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {

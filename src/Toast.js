@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Transition } from '@headlessui/react'
 import { CheckCircleIcon } from '@heroicons/react/outline'
 import { XIcon } from '@heroicons/react/solid'
-import { useEffect } from 'react/cjs/react.development'
+import { useEffect } from 'react'
 
 const Toast = ({ isOpen, setIsOpen }) => {
 	useEffect(() => {
@@ -15,12 +15,10 @@ const Toast = ({ isOpen, setIsOpen }) => {
 
 	return (
 		<>
-			{/* Global notification live region, render this permanently at the end of the document */}
 			<div
 				aria-live="assertive"
 				className="z-50 fixed inset-0 items-start px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
 				<div className="max-w-7xl mx-auto flex flex-col items-center">
-					{/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
 					<Transition
 						show={isOpen}
 						as={Fragment}

@@ -1,8 +1,12 @@
 import PlayIcon from './PlayIcon'
 
-const About = ({ setOpenForm, workPosY }) => {
+const About = ({ workPosY, contactPosY }) => {
 	const handleShiftToWorkSection = () => {
 		window.scrollTo({top: workPosY+150, behavior: 'smooth'})
+	}
+
+	const handleShiftToContactSection = () => {
+		window.scrollTo({top: contactPosY, behavior: 'smooth'})
 	}
 
 	return (
@@ -34,7 +38,7 @@ const About = ({ setOpenForm, workPosY }) => {
 							Review my work
 						</button>
 						<button
-							onClick={() => setOpenForm(true)}
+							onClick={handleShiftToContactSection}
 							className="mr-2 mb-2 py-2 px-4 rounded-3xl shadow-2xl  drop-shadow-2xl text-white font-semibold bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
 							Contact me
 						</button>

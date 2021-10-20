@@ -8,16 +8,21 @@ import ProjectOverview from './ProjectOverview'
 
 const App = () => {
 	// get position of work section to pass to button
-	const [workPosY, setWorkPosY] = useState(0)
+	const [sectionPosY, setSectionPosY] = useState({work: 0, contact: 0})
 	const [toastIsOpen, setToastIsOpen] = useState(false)
 	const workRef = useRef()
+	const contactRef = useRef()
+
 	useEffect(() => {
-		const detectWorkPosY = () => {
-			setWorkPosY(workRef.current.getBoundingClientRect().top)
+		const detectSectionPosY = () => {
+			setSectionPosY({
+				work: workRef.current.getBoundingClientRect().top,
+				contact: contactRef.current.getBoundingClientRect().top
+			})
 		}
-		window.addEventListener('scroll', detectWorkPosY)
+		window.addEventListener('scroll', detectSectionPosY)
 		return () => {
-			window.removeEventListener('scroll', detectWorkPosY)
+			window.removeEventListener('scroll', detectSectionPosY)
 		}
 	}, [])
 
@@ -83,9 +88,9 @@ const App = () => {
 			<Toast isOpen={toastIsOpen} setIsOpen={setToastIsOpen}/>
 			<NavBar socials={socials} />
 			<main className="max-w-7xl mx-auto">
-				<About workPosY={workPosY} />
+				<About workPosY={sectionPosY.work} contactPosY={sectionPosY.contact}/>
 				<ProjectOverview ref={workRef} />
-				<Contact onOpenToast={setToastIsOpen}/>
+				<Contact ref={contactRef} onOpenToast={setToastIsOpen}/>
 			</main>
 			<Footer socials={socials} />
 		</>

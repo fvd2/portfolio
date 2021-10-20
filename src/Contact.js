@@ -1,15 +1,14 @@
+import { forwardRef } from 'react'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { Formik, Form } from 'formik'
 import emailjs from 'emailjs-com'
 
-const Contact = ({onOpenToast}) => {
+const Contact = forwardRef(({ onOpenToast }, ref) => {
 	return (
-		<section className="max-w-7xl mx-auto md:flex md:items-center md:justify-between bg-gradient-to-br from-gray-900 to-blue-900">
-			{/* Contact section */}
+		<section ref={ref} className="max-w-7xl mx-auto md:flex md:items-center md:justify-between bg-gradient-to-br from-gray-900 to-blue-900">
 			<div className="text-white">
 				<div className="relative">
 					<div className="grid grid-cols-1 lg:grid-cols-3">
-						{/* Contact information */}
 						<div className="relative overflow-hidden py-10 px-6 xl:px-12">
 							<h3 className="text-xl font-medium">
 								Get in touch
@@ -69,7 +68,7 @@ const Contact = ({onOpenToast}) => {
 										)
 										actions.setSubmitting(false)
 										actions.resetForm()
-                                        onOpenToast(true)
+										onOpenToast(true)
 									}, 300)
 								}}>
 								{({ handleSubmit, handleChange, values }) => (
@@ -86,7 +85,7 @@ const Contact = ({onOpenToast}) => {
 												<input
 													type="text"
 													value={values.firstName}
-                                                    onChange={handleChange}
+													onChange={handleChange}
 													name="firstName"
 													id="firstName"
 													autoComplete="given-name"
@@ -103,8 +102,8 @@ const Contact = ({onOpenToast}) => {
 											<div className="mt-1">
 												<input
 													type="text"
-                                                    value={values.lastName}
-                                                    onChange={handleChange}
+													value={values.lastName}
+													onChange={handleChange}
 													name="lastName"
 													id="lastName"
 													autoComplete="family-name"
@@ -121,8 +120,8 @@ const Contact = ({onOpenToast}) => {
 											<div className="mt-1">
 												<input
 													id="email"
-                                                    value={values.email}
-                                                    onChange={handleChange}
+													value={values.email}
+													onChange={handleChange}
 													name="email"
 													type="email"
 													autoComplete="email"
@@ -146,8 +145,8 @@ const Contact = ({onOpenToast}) => {
 											<div className="mt-1">
 												<input
 													type="text"
-                                                    value={values.phone}
-                                                    onChange={handleChange}
+													value={values.phone}
+													onChange={handleChange}
 													name="phone"
 													id="phone"
 													autoComplete="tel"
@@ -172,13 +171,12 @@ const Contact = ({onOpenToast}) => {
 											<div className="mt-1">
 												<textarea
 													id="message"
-                                                    value={values.message}
-                                                    onChange={handleChange}
+													value={values.message}
+													onChange={handleChange}
 													name="message"
 													rows={4}
 													className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-purple-900 focus:border-blue-900 border border-warm-gray-300 rounded-md"
 													aria-describedby="message-max"
-													defaultValue={''}
 												/>
 											</div>
 										</div>
@@ -198,6 +196,6 @@ const Contact = ({onOpenToast}) => {
 			</div>
 		</section>
 	)
-}
+})
 
 export default Contact

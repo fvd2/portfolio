@@ -4,7 +4,6 @@ import kanbanImg from './assets/ss-kanban.png'
 import ecomImg from './assets/ss-ecom.png'
 import portfolioImg from './assets/ss-portfolio.png'
 import authImg from './assets/george-prentzas-SRFG7iwktDk-unsplash.jpg'
-import firebaseImg from './assets/christian-garcia-N7ugU5iFosI-unsplash-cropped.png'
 import { ClipboardIcon, LightningBoltIcon } from '@heroicons/react/solid'
 import update from 'immutability-helper'
 

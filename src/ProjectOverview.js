@@ -2,6 +2,7 @@ import { forwardRef, useState } from 'react'
 import ProjectCard from './ProjectCard'
 import kanbanImg from './assets/ss-kanban.png'
 import ecomImg from './assets/ss-ecom.png'
+import portfolioImg from './assets/ss-portfolio.png'
 import authImg from './assets/george-prentzas-SRFG7iwktDk-unsplash.jpg'
 import firebaseImg from './assets/christian-garcia-N7ugU5iFosI-unsplash-cropped.png'
 import { ClipboardIcon, LightningBoltIcon } from '@heroicons/react/solid'
@@ -13,7 +14,7 @@ const data = [
 		type: 'project',
 		title: 'Ecommerce - frontend',
 		description:
-			'Basic but fully functioning webstore. Leverages Tailwind UI components for quick prototyping',
+			'Webstore MVP for a single product category. Leverages Tailwind UI components for quick prototyping',
 		tags: ['React', 'Tailwind UI', 'Hooks', 'Cookies'],
 		image: {
 			src: ecomImg,
@@ -58,10 +59,10 @@ const data = [
 		tags: ['node.js', 'express', 'mongodb', 'jwt'],
 		image: {
 			src: authImg,
-			label: 'tbd'
+			label: 'image of fingerprint on lit glass surface'
 		},
-		repoUrl: 'url',
-		liveUrl: 'screenshot of project code'
+		repoUrl: 'https://github.com/fvd2/rest-api-template',
+		liveUrl: undefined
 	},
 	{
 		id: 4,
@@ -72,11 +73,25 @@ const data = [
 		tags: ['react', 'firebase'],
 		image: {
 			src: firebaseImg,
-			label: 'screenshot of project code'
+			label: 'desert mountain view'
 		},
-		repoUrl: 'url',
-		liveUrl: 'url'
-	}
+		repoUrl: 'https://github.com/fvd2/',
+		liveUrl: undefined
+	},
+	{
+		id: 5,
+		type: 'project',
+		title: 'Portfolio',
+		description:
+			'This website. The goal: show visitors (1) that I am a developer looking for work, (2) what I can do and (3) how to reach me',
+		tags: ['react', 'tailwind css', 'emailjs'],
+		image: {
+			src: portfolioImg,
+			label: 'screenshot of portfolio website'
+		},
+		repoUrl: 'https://github.com/fvd2/portfolio',
+		liveUrl: undefined
+	},
 ]
 
 const gradients = [
@@ -133,7 +148,7 @@ const ProjectOverview = forwardRef((props, ref) => {
 
 	return (
 		<section ref={ref}>
-			<div className="pt-96 pb-16 md:pt-56 lg:pt-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-100 border-l-2 border-r-2 border-gray-200">
+			<div className="pt-96 pb-16 md:pt-56 lg:pt-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 xl:pb-24 bg-gray-100 border-l-2 border-r-2 border-gray-200">
 				<div>
 					<div className="block pb-10">
 						<nav

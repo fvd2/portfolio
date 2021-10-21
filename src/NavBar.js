@@ -5,7 +5,7 @@ const NavBar = ({ socials }) => {
 	return (
 		<>
 			<img
-				className="absolute max-w-7xl left-1/2 transform -translate-x-1/2 h-auto object-fit"
+				className="absolute max-w-7xl h-96 w-screen object-cover md:w-full md:h-auto left-1/2 transform -translate-x-1/2 "
 				src={bgImage}
 				alt="snow-covered mountain peak"></img>
 			<div className="h-40 w-screen">

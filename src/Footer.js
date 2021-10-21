@@ -1,6 +1,6 @@
 const Footer = ({ socials }) => {
 	return (
-		<footer className="bg-white">
+		<footer>
 			<div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8 bg-gray-50 border-l-2 border-b-2 border-r-2 border-gray-200">
 				<div className="flex justify-center items-center space-x-6 md:order-2">
 					{socials.map(item => (

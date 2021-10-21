@@ -84,7 +84,7 @@ const App = () => {
 	]
 
 	return (
-		<>
+		<div className="bg-gray-50">
 			<Toast isOpen={toastIsOpen} setIsOpen={setToastIsOpen}/>
 			<NavBar socials={socials} />
 			<main className="max-w-7xl mx-auto">
@@ -93,7 +93,7 @@ const App = () => {
 				<Contact ref={contactRef} onOpenToast={setToastIsOpen}/>
 			</main>
 			<Footer socials={socials} />
-		</>
+		</div>
 	)
 }
 

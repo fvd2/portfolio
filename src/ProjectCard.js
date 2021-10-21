@@ -30,7 +30,7 @@ const ProjectCard = ({ project, gradient }) => {
 						))}
 					</div>
 					<div className="h-10 inline-flex items-center">
-						<a
+						{liveUrl && <a
 							href={liveUrl}
 							target="_blank"
 							rel="noreferrer"
@@ -48,7 +48,7 @@ const ProjectCard = ({ project, gradient }) => {
 								/>
 							</svg>
 							<span className="ml-2">View live app</span>
-						</a>
+						</a>}
 						<a
 							href={repoUrl}
 							target="_blank"

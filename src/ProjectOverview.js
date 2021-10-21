@@ -66,20 +66,6 @@ const data = [
 	},
 	{
 		id: 4,
-		type: 'template',
-		title: 'React + Firebase',
-		description:
-			'Template for a React app with Firebase Authentication and Firestore setup',
-		tags: ['react', 'firebase'],
-		image: {
-			src: firebaseImg,
-			label: 'desert mountain view'
-		},
-		repoUrl: 'https://github.com/fvd2/',
-		liveUrl: undefined
-	},
-	{
-		id: 5,
 		type: 'project',
 		title: 'Portfolio',
 		description:

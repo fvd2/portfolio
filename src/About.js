@@ -31,7 +31,7 @@ const About = ({ workPosY, contactPosY }) => {
 					</span>
 					<p className="py-2 mx-auto lg:mt-4 max-w-2xl text-xs sm:text-sm md:text-md md:text-lg lg:text-2xl text-gray-700">
 						Consultant turned developer; looking for a team to
-						learn, build high quality software, and have fun
+						learn and build high quality software
 					</p>
 					<div className="py-2 lg:py-4 flex justify-center flex-wrap gap-3 text-xs md:text-md lg:text-lg">
 						<button onClick={handleShiftToWorkSection} className="mr-2 mb-2 py-2 px-4 bg-gray-100 hover:bg-gray-200 rounded-3xl font-semibold text-gray-700">

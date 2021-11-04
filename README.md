@@ -1,5 +1,5 @@
 # portfolio
-Front-end to showcase recent work and allow visitors to easily connect (if they want)
+Front-end to showcase recent work and allow visitors to easily connect
 
 [live app](https://freekvandam.nl) 
 
